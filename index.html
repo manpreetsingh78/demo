@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Image Carousel with Centered Three Gears</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+        }
+
+        /* Gear Styles */
+        .gear {
+            position: absolute;
+            width: 50px;  /* Reduced size */
+            height: 50px; /* Reduced size */
+            z-index: 2;
+        }
+
+        /* Positioning and Animating Gears */
+        .gear1 {
+            /* Top Gear */
+            top: calc(50% - 60px);  /* Adjusted position */
+            left: calc(50% - 25px); /* Adjusted for smaller gear */
+            animation: rotate-gear1 8s linear infinite;
+        }
+
+        .gear2 {
+            /* Bottom Left Gear */
+            top: calc(50% - 10px);
+            left: calc(50% - 65px); /* Adjusted position */
+            animation: rotate-gear2 8s linear infinite;
+        }
+
+        .gear3 {
+            /* Bottom Right Gear */
+            top: calc(50% - 10px);
+            left: calc(50% + 15px); /* Adjusted position */
+            animation: rotate-gear3 8s linear infinite;
+        }
+
+        /* Gear Animations */
+        @keyframes rotate-gear1 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotate-gear2 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+        @keyframes rotate-gear3 {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Orbiting Icons Styles */
+        .icon {
+            position: absolute;
+            width: 80px;  /* Increased size */
+            height: 80px; /* Increased size */
+            top: 50%;
+            left: 50%;
+            margin: -40px 0 0 -40px; /* Center the larger images */
+            animation: orbit 8s linear infinite;
+        }
+
+        /* Individual Icon Classes with Filters and Delays */
+        .one {
+            filter: hue-rotate(0deg);
+            animation-delay: 0s;
+        }
+
+        .two {
+            filter: hue-rotate(90deg);
+            animation-delay: -2s;
+        }
+
+        .three {
+            filter: hue-rotate(180deg);
+            animation-delay: -4s;
+        }
+
+        .four {
+            filter: hue-rotate(270deg);
+            animation-delay: -6s;
+        }
+
+        /* Orbit Animation */
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Three Interlocking Gears -->
+        <img class="gear gear1" src="https://cdn-icons-png.flaticon.com/512/126/126472.png" alt="Gear 1">
+        <img class="gear gear2" src="https://cdn-icons-png.flaticon.com/512/126/126472.png" alt="Gear 2">
+        <img class="gear gear3" src="https://cdn-icons-png.flaticon.com/512/126/126472.png" alt="Gear 3">
+        <!-- Orbiting Images -->
+        <img class="icon one" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 1">
+        <img class="icon two" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 2">
+        <img class="icon three" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 3">
+        <img class="icon four" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 4">
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Image Carousel with Center Gear</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+        }
+
+        .gear {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            margin: -40px 0 0 -40px; /* Center the gear */
+            z-index: 2;
+            animation: gear-rotate 8s linear infinite reverse;
+        }
+
+        .icon {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: 50%;
+            left: 50%;
+            margin: -30px 0 0 -30px; /* Center the images */
+            animation: orbit 8s linear infinite;
+        }
+
+        .one {
+            filter: hue-rotate(0deg);
+            animation-delay: 0s;
+        }
+
+        .two {
+            filter: hue-rotate(90deg);
+            animation-delay: -2s;
+        }
+
+        .three {
+            filter: hue-rotate(180deg);
+            animation-delay: -4s;
+        }
+
+        .four {
+            filter: hue-rotate(270deg);
+            animation-delay: -6s;
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+
+        @keyframes gear-rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><!-- Orbiting Images -->
+        <img class="icon one" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 1">
+        <img class="icon two" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 2">
+        <img class="icon three" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 3">
+        <img class="icon four" src="https://cdn-icons-png.flaticon.com/256/13408/13408812.png" alt="Icon 4">
+    </div>
+</body>
+</html>
